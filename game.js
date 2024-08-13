@@ -33,16 +33,12 @@ function truechecker(){
             correctSound()
             setTimeout(correctclickremove, 500);
             setTimeout(animateattay, 1000,i);
+            refreash()
             break;
 
         
         }
-        if (lengthclick === 10){
 
-        document.querySelector("body").innerHTML = "Refresh the page"
-
-
-        }
         else{
             console.log("you lost")
             falseclick()
@@ -55,6 +51,31 @@ function truechecker(){
    }
   
 }
+function refreash(){
+    var lengthclick = Clicking.length
+    if (lengthclick === 10){
+    document.querySelector("body").innerHTML = " "
+    const para = document.createElement("p");
+    para.innerText = "Congrats you won ,";
+    para.style.color = "aliceblue"
+    para.style.marginTop = "25%"
+    para.style.fontSize = "x-large";
+
+    document.body.appendChild(para);
+    
+    const para1 = document.createElement("p");
+    para1.innerText = "Refresh the page.";
+    para1.style.color = "aliceblue"
+    //para1.style.marginTop = "25%"
+    para1.style.fontSize = "x-large";
+
+    document.body.appendChild(para1);
+   
+
+    }
+
+}    
+
 function correctclick(){
     $("body").addClass("correct");
 }
@@ -68,8 +89,9 @@ function falseclick(){
     $("body").addClass("false");
 }
     
-}
+
 function reset(){
+    document.querySelector("#startwith").innerHTML = "try again"
     
     Clicking =[]
     generator = []
