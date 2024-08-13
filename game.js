@@ -22,6 +22,7 @@ function truechecker(){
     
     for(var i = Clicking.length-1 ; i <= generator.length ; i++){
         var itr = i
+        var lengthclick = Clicking.length
         var vlkarr = generator.length
         var clkarr = Clicking[i]
         var cglkarr = generator[i]
@@ -36,6 +37,12 @@ function truechecker(){
 
         
         }
+        if (lengthclick === 10){
+
+        document.querySelector("body").innerHTML = "Refresh the page"
+
+
+        }
         else{
             console.log("you lost")
             falseclick()
@@ -44,9 +51,9 @@ function truechecker(){
             reset()
             break;
         }
-     
-     
     
+   }
+  
 }
 function correctclick(){
     $("body").addClass("correct");
